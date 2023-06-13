@@ -6,7 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Project</title>
-    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <style>
+        #download-link {
+            display: none;
+        }
+        
+        .explanation {
+            color: blue;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,6 +56,12 @@
     <input title="initial" type="number" name="initial" id="initial-input">
     <br>
     <div class="explanation">This value sets the starting amplitude of the sinusoidal curve</div>
+    <br>
+
+    <label for="target-maximum">target-maximum:</label>
+    <input title="target-maximum" type="number" name="target-maximum" id="target-maximum-input">
+    <br>
+    <div class="explanation">This value sets final maximum amplitude for this trial</div>
     <br>
 
     <button title="button" id="button">start simulation</button>

@@ -4,6 +4,7 @@ let width = 1000;
 let height = 1000;
 let iterations = 200000;
 let height_compression_rate = 10;
+let target_maximum = 100;
 let init_maximum = 300;
 
 var initial = 0;
@@ -177,7 +178,7 @@ function putdots() {
 }
 
 function runFunctionFunction(amplitude) {
-    if (initial <= init_maximum) {
+    if (initial <= target_maximum) {
         const CanvasImage = new Image();
         CanvasImage.src = Canvas.toDataURL();
         CanvasImages[initial] = CanvasImage;
@@ -196,7 +197,7 @@ function runFunctionFunction(amplitude) {
         clearCanvas(Graph, Graph_Context);
         run();
     }
-    if (initial - 1 == init_maximum) {
+    if (initial - 1 == target_maximum) {
         var zip = new JSZip();
         var CanvasZip = zip.folder("Canvas");
         var GraphZip = zip.folder("Graph");
@@ -270,6 +271,7 @@ document.getElementById("button").onclick = function() {
     height_compression_rate = parseInt(document.getElementById('height-compression-rate-input').value);
     init_maximum = parseInt(document.getElementById('init-maximum-input').value);
     initial = parseInt(document.getElementById('initial-input').value);
+    target_maximum = parseInt(document.getElementById('target-maximum-input').value);
 
     if (!anythingWrong) {
 
@@ -282,9 +284,9 @@ document.getElementById("button").onclick = function() {
 
 
         data_y = new Array(width);
-        finalData = new Array(init_maximum);
-        CanvasImages = new Array(init_maximum + 1);
-        GraphImages = new Array(init_maximum + 1);
+        finalData = new Array(target_maximum);
+        CanvasImages = new Array(target_maximum + 1);
+        GraphImages = new Array(target_maximum + 1);
         // data_x.fill(0);
         data_y.fill(0);
 
